@@ -19,7 +19,7 @@ export default function SignInStackNavigationComponent() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Login' component={Login}/>
+        <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}/>
         <Stack.Screen name='SignUp' component={SignUp}/>
       </Stack.Navigator>
     </NavigationContainer>
