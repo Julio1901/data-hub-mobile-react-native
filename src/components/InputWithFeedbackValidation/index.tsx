@@ -11,7 +11,7 @@ const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMess
   return (
     <View>
       <InputContainer>
-        <SignInInput placeholder={placeholder}/>
+        <SignInInput placeholder={placeholder} placeholderTextColor="#949494"/>
         <ValidationInputMessage>{feedbackMessage}</ValidationInputMessage>
       </InputContainer>
     </View>

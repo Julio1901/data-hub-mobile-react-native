@@ -7,8 +7,8 @@ export const SignInInput = styled(TextInput)`
     width: 327px;
     height: 50px;
     border-radius: 20px;
-    background-color: white;
     text-align: center;
+    background-color: #f2f2f3;
 `
 
 export const InputContainer = styled.View`

@@ -5,6 +5,7 @@ import { TextInput, View } from "react-native";
 
 export const MainContainer = styled.SafeAreaView `
     flex: 1;
+    background-color: white;
 `
 
 export const Title = styled.Text`
@@ -12,6 +13,11 @@ export const Title = styled.Text`
     color: #4C9FC1;
     text-align: center;
     font-family:'YoungSerif-Regular';
+`
+
+export const LogoContainer = styled.View`
+margin-top: 20px;
+   align-items: center;
 `
 
 export const BodyContainer = styled.View` 
@@ -31,11 +37,13 @@ export const SignUpContainer = styled.View`
 `
 
 export const SignUpText = styled.Text`
-    font-size: 16px;
+    font-size: 20;
+    font-family: 'BarlowCondensed-Regular';
 `
 export const SignUpButtonText = styled.Text`
-    font-size: 16px;
+    font-size: 20px;
     color: #0088ff ;
     margin-left: 15px;
+    font-family: 'BarlowCondensed-Regular';
 `
 
