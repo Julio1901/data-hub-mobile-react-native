@@ -1,7 +1,7 @@
 
 
 import styled from "styled-components/native";
-import { TextInput,View } from "react-native";
+import { TextInput, View } from "react-native";
 
 export const MainContainer = styled.SafeAreaView `
     flex: 1;
@@ -18,3 +18,24 @@ export const BodyContainer = styled.View`
     flex: 1;
     justify-content: center;
 `
+
+export const ButtonContainer = styled.View`
+     padding-top: 20px;
+     align-items: center;
+     margin-top: 50px;
+`
+
+export const SignUpContainer = styled.View`
+    flex-direction: row;
+    margin-top: 30px;
+`
+
+export const SignUpText = styled.Text`
+    font-size: 16px;
+`
+export const SignUpButtonText = styled.Text`
+    font-size: 16px;
+    color: #0088ff ;
+    margin-left: 15px;
+`
+

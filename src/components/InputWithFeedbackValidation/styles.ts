@@ -14,7 +14,6 @@ export const SignInInput = styled(TextInput)`
 export const InputContainer = styled.View`
     align-items: center;
     padding-top: 10px;
-    background-color: lightblue;
 `
 
 export const ValidationInputMessage = styled.Text`
