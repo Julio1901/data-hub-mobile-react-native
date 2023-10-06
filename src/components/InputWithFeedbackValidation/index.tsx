@@ -5,14 +5,18 @@ import {View} from 'react-native';
 interface Props{
     placeholder: string
     feedbackMessage: string
+    showFeedbackMessage: boolean
 }
 
-const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMessage}) => {
+const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMessage, showFeedbackMessage}) => {
   return (
     <View>
       <InputContainer>
         <SignInInput placeholder={placeholder} placeholderTextColor="#949494"/>
-        <ValidationInputMessage>{feedbackMessage}</ValidationInputMessage>
+        { showFeedbackMessage? (
+           <ValidationInputMessage>{feedbackMessage}</ValidationInputMessage>
+        ): null        
+      }
       </InputContainer>
     </View>
   );

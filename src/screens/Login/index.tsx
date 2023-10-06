@@ -18,8 +18,8 @@ const Login = () => {
                 />
             </LogoContainer>            
             <BodyContainer>
-                <InputWithFeedbackValidation placeholder="E-mail or CPF" feedbackMessage="Invalid E-mail or CPF"/>
-                <InputWithFeedbackValidation placeholder="Password" feedbackMessage="Your password must be have min 5 letters"/>
+                <InputWithFeedbackValidation placeholder="E-mail or CPF" feedbackMessage="Invalid E-mail or CPF" showFeedbackMessage={true}/>
+                <InputWithFeedbackValidation placeholder="Password" feedbackMessage="Your password must be have min 5 letters" showFeedbackMessage={false}/>
                 <ButtonContainer>
                     <DefaultButton title="Log In" width={255}/> 
                     <SignUpContainer>
