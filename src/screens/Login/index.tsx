@@ -4,6 +4,7 @@ import { BodyContainer, Title, MainContainer, ButtonContainer, SignUpText, SignU
 import InputWithFeedbackValidation from "../../components/InputWithFeedbackValidation";
 import { DefaultButton } from "../../components/DefaultButton";
 import Gif from 'react-native-gif'
+import { DocumentValidator } from "../../utils/documentValidator";
 
 const Login = () => {
     return (
@@ -18,7 +19,7 @@ const Login = () => {
             </LogoContainer>            
             <BodyContainer>
                 <InputWithFeedbackValidation placeholder="E-mail or CPF" feedbackMessage="Invalid E-mail or CPF"/>
-                <InputWithFeedbackValidation placeholder="Password" feedbackMessage="Your password must be have min 5 letter"/>
+                <InputWithFeedbackValidation placeholder="Password" feedbackMessage="Your password must be have min 5 letters"/>
                 <ButtonContainer>
                     <DefaultButton title="Log In" width={255}/> 
                     <SignUpContainer>
