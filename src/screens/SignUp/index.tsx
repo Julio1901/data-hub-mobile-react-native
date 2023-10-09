@@ -12,9 +12,10 @@ const SignUp = () => {
 
     const navigation = useNavigation<SignInStackNavigation>()
 
-    const dbService = new DataBaseService()
+    // const dbService = new DataBaseService()
     const mockUser = new UserDTO("Mock Name", "Mock login", "Mock Password")
-
+    const dbService = new DataBaseService()
+    
     dbService.createUser(mockUser)
 
     async function fetchUser() {

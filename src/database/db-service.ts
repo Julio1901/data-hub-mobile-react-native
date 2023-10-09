@@ -4,26 +4,62 @@ import { UserDTO } from '../DTO/UserDTO';
 
 export class DataBaseService {
 
-    private db: SQLite.SQLiteDatabase;
+    // private db: SQLite.SQLiteDatabase;
 
-    constructor() {
-      this.db = SQLite.openDatabase(
-        {
-          name: 'data-hub-database.db',
-          location: 'default',
-          createFromLocation: 1,
-        },
-        () => {
-          console.log('Banco de dados aberto com sucesso!');
-          this.createTable();
-        },
-        (error) => {
-          console.error('Erro ao abrir o banco de dados:', error);
-        }
-      );
+    
+    private  db: SQLite.SQLiteDatabase | null = null;
+
+
+    // constructor() {
+    //   this.db = SQLite.openDatabase(
+    //     {
+    //       name: 'data-hub-database.db',
+    //       location: 'default',
+    //       createFromLocation: 1,
+    //     },
+    //     () => {
+    //       console.log('Banco de dados aberto com sucesso!');
+    //       this.createTable();
+    //     },
+    //     (error) => {
+    //       console.error('Erro ao abrir o banco de dados:', error);
+    //     }
+    //   );
+    // }
+
+    private static db: SQLite.SQLiteDatabase | null = null;
+
+  constructor() {
+    if (DataBaseService.db) {
+      // Se o banco de dados já foi aberto anteriormente, use-o
+      this.db = DataBaseService.db;
+      console.log('Banco de dados já foi aberto anteriormente.');
+    } else {
+      // Se o banco de dados ainda não foi aberto, abra-o
+      this.openDatabase();
     }
+  }
+
+  private openDatabase() {
+    DataBaseService.db = SQLite.openDatabase(
+      {
+        name: 'data-hub-database.db',
+        location: 'default',
+        createFromLocation: 1,
+      },
+      () => {
+        console.log('Banco de dados aberto com sucesso!');
+        this.createTable();
+      },
+      (error) => {
+        console.error('Erro ao abrir o banco de dados:', error);
+      }
+    );
+  }
+
+
     createTable() {
-        this.db.transaction((tx) => {
+        this.db?.transaction((tx) => {
           tx.executeSql(
             'SELECT name FROM sqlite_master WHERE type="table" AND name="users"',
             [],
