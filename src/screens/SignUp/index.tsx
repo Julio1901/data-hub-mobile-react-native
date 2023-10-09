@@ -5,7 +5,7 @@ const SignUp = () => {
 
     return (
         <View style={ {marginTop: 60}}>
-            <Text style= {{ textAlign: "center"}}> Login</Text>
+            <Text style= {{ textAlign: "center"}}> Sign up Screen</Text>
         </View>
 
         )
