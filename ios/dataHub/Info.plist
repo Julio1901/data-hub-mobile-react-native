@@ -98,6 +98,50 @@
 		<string>BarlowCondensed-SemiBoldItalic.ttf</string>
 		<string>BarlowCondensed-Thin.ttf</string>
 		<string>BarlowCondensed-ThinItalic.ttf</string>
+		<string>PlayfairDisplay-Black.ttf</string>
+		<string>PlayfairDisplay-BlackItalic.ttf</string>
+		<string>PlayfairDisplay-Bold.ttf</string>
+		<string>PlayfairDisplay-BoldItalic.ttf</string>
+		<string>PlayfairDisplay-ExtraBold.ttf</string>
+		<string>PlayfairDisplay-ExtraBoldItalic.ttf</string>
+		<string>PlayfairDisplay-Italic-VariableFont_wght.ttf</string>
+		<string>PlayfairDisplay-Italic.ttf</string>
+		<string>PlayfairDisplay-Medium.ttf</string>
+		<string>PlayfairDisplay-MediumItalic.ttf</string>
+		<string>PlayfairDisplay-Regular.ttf</string>
+		<string>PlayfairDisplay-SemiBold.ttf</string>
+		<string>PlayfairDisplay-SemiBoldItalic.ttf</string>
+		<string>PlayfairDisplay-VariableFont_wght.ttf</string>
+		<string>FiraSans-Black.ttf</string>
+		<string>FiraSans-BlackItalic.ttf</string>
+		<string>FiraSans-Bold.ttf</string>
+		<string>FiraSans-BoldItalic.ttf</string>
+		<string>FiraSans-ExtraBold.ttf</string>
+		<string>FiraSans-ExtraBoldItalic.ttf</string>
+		<string>FiraSans-ExtraLight.ttf</string>
+		<string>FiraSans-ExtraLightItalic.ttf</string>
+		<string>FiraSans-Italic.ttf</string>
+		<string>FiraSans-Light.ttf</string>
+		<string>FiraSans-LightItalic.ttf</string>
+		<string>FiraSans-Medium.ttf</string>
+		<string>FiraSans-MediumItalic.ttf</string>
+		<string>FiraSans-Regular.ttf</string>
+		<string>FiraSans-SemiBold.ttf</string>
+		<string>FiraSans-SemiBoldItalic.ttf</string>
+		<string>FiraSans-Thin.ttf</string>
+		<string>FiraSans-ThinItalic.ttf</string>
+		<string>EBGaramond-Bold.ttf</string>
+		<string>EBGaramond-BoldItalic.ttf</string>
+		<string>EBGaramond-ExtraBold.ttf</string>
+		<string>EBGaramond-ExtraBoldItalic.ttf</string>
+		<string>EBGaramond-Italic-VariableFont_wght.ttf</string>
+		<string>EBGaramond-Italic.ttf</string>
+		<string>EBGaramond-Medium.ttf</string>
+		<string>EBGaramond-MediumItalic.ttf</string>
+		<string>EBGaramond-Regular.ttf</string>
+		<string>EBGaramond-SemiBold.ttf</string>
+		<string>EBGaramond-SemiBoldItalic.ttf</string>
+		<string>EBGaramond-VariableFont_wght.ttf</string>
 	</array>
 </dict>
 </plist>

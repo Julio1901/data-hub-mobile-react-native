@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import { CenterContainer, ExpenseContainer, ExpenseName, ExpenseType, MoneyContainer, MoneySymbol, MoneyValue } from "./styles";
 
 type ItemProps = {
     name: string
@@ -9,11 +10,16 @@ type ItemProps = {
 
 
 export const ExpenseListItem = ({name, value, type}: ItemProps) => (
-    <View >
-        <Text>{name}</Text>
-        <Text>{value}</Text>
-        <Text>{type}</Text>
-        <Text>'---------------------'</Text>
-  </View>
+    <ExpenseContainer>
+        <ExpenseType>{type}</ExpenseType>
+        <CenterContainer>
+            <ExpenseName>{name}</ExpenseName>
+            <MoneyContainer>
+                <MoneySymbol>R$</MoneySymbol>
+                <MoneyValue>{value}</MoneyValue>
+            </MoneyContainer>      
+        </CenterContainer>
+        
+    </ExpenseContainer>
 
 );

@@ -74,6 +74,126 @@
       "sha1": "b061007aa0fb966349d69a2d3cf8b95beb60dd51"
     },
     {
+      "path": "src/assets/fonts/EBGaramond-Bold.ttf",
+      "sha1": "26ce4cf1d22960ba7a0e20d1e19c7d7c567e7bf1"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-BoldItalic.ttf",
+      "sha1": "0c619caa3bbaf9c5bb8f04ae0f6cd29693fbdf99"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-ExtraBold.ttf",
+      "sha1": "2d4106df7d22ee265aa3ea8287788749b995483f"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-ExtraBoldItalic.ttf",
+      "sha1": "e38b218b53ebfa638e889d77cad63e3d276f2fe9"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-Italic-VariableFont_wght.ttf",
+      "sha1": "74d842fe0befe3808f6f2cb076e42d2b7a21b94b"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-Italic.ttf",
+      "sha1": "04ef266fc322d43c76ceac72d41961912edee695"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-Medium.ttf",
+      "sha1": "db7caf3821983cf8acef6eef031884a89a3947fd"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-MediumItalic.ttf",
+      "sha1": "b4eacbe00778b8e806b0541dbf1d25a1270776e6"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-Regular.ttf",
+      "sha1": "be26da68f44ee5c3275cafcc5a352a4964f292a0"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-SemiBold.ttf",
+      "sha1": "f7756122d48ebb7609cee8e22e6e58a91b5bb703"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-SemiBoldItalic.ttf",
+      "sha1": "54f73463ecfaee9452dd857f948bfb6a044288eb"
+    },
+    {
+      "path": "src/assets/fonts/EBGaramond-VariableFont_wght.ttf",
+      "sha1": "af14d5d5afaffea3ac5db426edf408776c876181"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Black.ttf",
+      "sha1": "d4f1f6397ae7e9ec9a079df6bf05164493216d2c"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-BlackItalic.ttf",
+      "sha1": "85b0ff494e9b259722175a6f7367e4c713849352"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Bold.ttf",
+      "sha1": "bdb04cd9e835a3cf7ba22df0354f1472812df225"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-BoldItalic.ttf",
+      "sha1": "64ca0c2a17bc89e3e274ab93d0a34ccf557ed5ee"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-ExtraBold.ttf",
+      "sha1": "d9a480fc974e62445563aee389896c6e92c32edb"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-ExtraBoldItalic.ttf",
+      "sha1": "d2605b822cb69309d7408914062ae483b9e049bc"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-ExtraLight.ttf",
+      "sha1": "98749514f072dfed08fcf9ff5e77ecfbc5e48cd8"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-ExtraLightItalic.ttf",
+      "sha1": "87f5e101da6eb900e6dbcd0e2e0988bd02462558"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Italic.ttf",
+      "sha1": "c584552cccc716eb287a95a23806be746f3cad73"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Light.ttf",
+      "sha1": "d795fdfc99d1bad2c0e42eea5a9f06e49dd67b1b"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-LightItalic.ttf",
+      "sha1": "26d80b11b6b24499165341bce66c05126623052e"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Medium.ttf",
+      "sha1": "9181432d76711ae510c9f20713465810cf09e63b"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-MediumItalic.ttf",
+      "sha1": "70985253068fcdd4774f198c6098c5f4946e548e"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Regular.ttf",
+      "sha1": "9647e8c14e6618517f6942fbada0a01e2c18973d"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-SemiBold.ttf",
+      "sha1": "7d6bc4d8ea78656ca2f234e41f0e74e676ad61e2"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-SemiBoldItalic.ttf",
+      "sha1": "925d03ef5fb51987cd0405f7cb717456ef24854a"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-Thin.ttf",
+      "sha1": "98d54288a6f354977e85bc4bb200e910d5045b8b"
+    },
+    {
+      "path": "src/assets/fonts/FiraSans-ThinItalic.ttf",
+      "sha1": "7e3a0aabbeb7122f3cb4d9e898cd55810a810ef9"
+    },
+    {
       "path": "src/assets/fonts/Manrope-Bold.ttf",
       "sha1": "a6b63c832d12337efb3123f47863f54472c81bf5"
     },
@@ -176,6 +296,62 @@
     {
       "path": "src/assets/fonts/Nunito-VariableFont_wght.ttf",
       "sha1": "c2adb9c3bcb684afc16cab5e70e8da3d3700a91e"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Black.ttf",
+      "sha1": "de7806872f91b97727c78796ece1365a4ccb1c1a"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-BlackItalic.ttf",
+      "sha1": "44db7ef2642b98b9807ed23962bec64432ba8d40"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Bold.ttf",
+      "sha1": "833c2b70c742b12b1be9461480c8853ddb663991"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-BoldItalic.ttf",
+      "sha1": "a46a0db1e4a946fd622df9286149b861081ae3c8"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-ExtraBold.ttf",
+      "sha1": "a3ef318fa4be7090a26f201bbc8bfc8ebbec734b"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-ExtraBoldItalic.ttf",
+      "sha1": "038ac6ab8ecbaa24a4e2e3186ff3a17e38cbf593"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf",
+      "sha1": "e56ffe27d31f8d13499b8d3aa5f00fdfed15da0e"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Italic.ttf",
+      "sha1": "466021d7e599a75fadea7bc5f0d4f0cb679849aa"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Medium.ttf",
+      "sha1": "0670023e90cdb6819b62ee4c60856e9a07bafd13"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-MediumItalic.ttf",
+      "sha1": "35616fb869f4b8a7d78469746beeba553490876b"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-Regular.ttf",
+      "sha1": "27948bdf40b983e7e7405ae9dc101abc0c455c99"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-SemiBold.ttf",
+      "sha1": "34e3b5e50340b6b1c5aff95c9202cfe662fd1d82"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-SemiBoldItalic.ttf",
+      "sha1": "b55f9f0b3fb199d6f5c5f3495924272ffadb70c5"
+    },
+    {
+      "path": "src/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf",
+      "sha1": "72c45479fe155703447ddcde60289724b826d24d"
     },
     {
       "path": "src/assets/fonts/YoungSerif-Regular.ttf",

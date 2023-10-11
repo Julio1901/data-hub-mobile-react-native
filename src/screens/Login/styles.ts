@@ -1,7 +1,7 @@
 
 
 import styled from "styled-components/native";
-import { TextInput, View } from "react-native";
+
 
 export const MainContainer = styled.SafeAreaView `
     flex: 1;
