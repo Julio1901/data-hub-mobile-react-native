@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { BodyContainer, Title, MainContainer, ButtonContainer, SignUpText, SignUpButtonText, SignUpContainer, LogoContainer} from "./styles";
-import InputWithFeedbackValidation from "../../components/InputWithFeedbackValidation";
+import InputWithFeedbackValidation from "../../components/InputWithFeedbackValidation/inputWithFeedbackValidation";
 import { DefaultButton } from "../../components/DefaultButton";
 import Gif from 'react-native-gif'
 import { DocumentValidator } from "../../utils/documentValidator";
 import { useNavigation } from "@react-navigation/native";
 import { SignInStackNavigation } from "../../navigation/signInStack";
+import RoundedGif from "../../components/RoundedGif/roundedGif";
 
 const Login = () => {
 
@@ -57,10 +58,13 @@ const Login = () => {
         <MainContainer >
             <LogoContainer>
                 <Title>Data Hub</Title>
-                <Gif
+                {/* <Gif
                 source={require('../../assets/images/gifs/world.gif')}
-                style={{ width: 200, height: 200 }}
+                style={{ width: 200, height: 200}}
                 resizeMode="cover"
+                /> */}
+                <RoundedGif 
+                   source={require('../../assets/images/gifs/turtle2.gif')}
                 />
             </LogoContainer>            
             <BodyContainer>
