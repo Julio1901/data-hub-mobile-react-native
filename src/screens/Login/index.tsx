@@ -78,7 +78,7 @@ const Login = () => {
                 />
                 <InputWithFeedbackValidation placeholder="Password" feedbackMessage="Your password must be have min 5 letters" showFeedbackMessage={false}/>
                 <ButtonContainer>
-                    <DefaultButton title="Log In" width={255}/> 
+                    <DefaultButton title="Log In" width={255} onPress={ () => {navigation.navigate("MonthlyExpenses")} }/> 
                     <SignUpContainer>
                         <SignUpText>Don't have an account?</SignUpText>
                         <TouchableOpacity onPress={ () => {navigation.navigate("SignUp")}}>
