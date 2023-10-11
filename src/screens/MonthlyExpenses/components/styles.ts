@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 
-export const ExpenseContainer = styled.View`
+export const ExpenseContainerPaid = styled.View`
     width: 200;
     height: 100;
     border-radius: 30px;
@@ -9,6 +9,20 @@ export const ExpenseContainer = styled.View`
     margin-bottom: 15px;
     justify-content: center;
     padding: 5px;
+    border: 2px;
+    border-color: #57FFAB;
+`
+
+export const ExpenseContainerNotPaid = styled.View`
+    width: 200;
+    height: 100;
+    border-radius: 30px;
+    background-color: rgba(76, 159, 193, 0.2);
+    margin-bottom: 15px;
+    justify-content: center;
+    padding: 5px;
+    border: 2px;
+    border-color: #FC5F54;
 `
 
 export const ExpenseType = styled.Text`

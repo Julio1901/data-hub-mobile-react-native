@@ -8,11 +8,11 @@ import { ExpenseListItem } from "./components/expenseListItem";
 const MonthlyExpensesScreen = () => {
 
     const expensesMock = [
-        new Expense('Conta de luz', 1000, 'fixed'),
-        new Expense('Gás', 4000, 'fixed'),
-        new Expense('Investimentos', 5000, 'variable'),
-        new Expense('IPVA Carro', 10000, 'variable'),
-        new Expense('Gym Pass', 3000, 'fixed'),
+        new Expense('Conta de luz', 1000, 'fixed', false),
+        new Expense('Gás', 4000, 'fixed', false),
+        new Expense('Investimentos', 5000, 'variable', true),
+        new Expense('IPVA Carro', 10000, 'variable', true),
+        new Expense('Gym Pass', 3000, 'fixed', false),
     ]
 
 
@@ -21,7 +21,7 @@ const MonthlyExpensesScreen = () => {
         <SafeAreaView style={ {  marginTop: 150, marginLeft: 100 }}>
             <FlatList 
             data={expensesMock}
-            renderItem={  ( { item }  )  => <ExpenseListItem name={item.name}  value={item.value} type={item.type}/>}
+            renderItem={  ( { item }  )  => <ExpenseListItem name={item.name}  value={item.value} type={item.type} isPaid={item.isPaid}/>}
              />
         </SafeAreaView>
     )
