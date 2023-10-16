@@ -10,13 +10,13 @@ interface Props {
 
 export const DefaultButton: React.FC<Props> = ({title, width = null, onPress = () => {}}) => {
   return width !== null ? (
-    <View style={ { width: width}}>
+    <View style={ { width: width}} testID="button-view" > 
       <Button onPress={onPress}>
         <ButtonText>{title}</ButtonText>
       </Button>
     </View>
   ) : (
-    <Button>
+    <Button  testID="default-button-id">
       <ButtonText>{title}</ButtonText>
     </Button>
   );

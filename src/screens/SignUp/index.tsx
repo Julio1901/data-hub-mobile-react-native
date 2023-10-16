@@ -1,7 +1,7 @@
 import React from "react";
 import { BackArrowIcon, BackToHomeContainer, BackToHomeText, BodyContainer, ButtonContainer, MainContainer, SubTitle, Title, HeadContainer, BirdIcon, BirdIconContainer } from "./styles";
 import InputWithFeedbackValidation from "../../components/InputWithFeedbackValidation/inputWithFeedbackValidation";
-import { DefaultButton } from "../../components/DefaultButton";
+import { DefaultButton } from "../../components/DefaultButton/defaultButton";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SignInStackNavigation } from "../../navigation/signInStack";

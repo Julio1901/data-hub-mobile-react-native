@@ -9,9 +9,8 @@ export const MainContainer = styled.SafeAreaView`
 export const Title = styled.Text`
     font-size: 40px;
     color: #4C9FC1;
-    text-align: center;
     font-family:'BarlowCondensed-Medium';
-    text-align: start;
+    text-align: left;
     margin-top: 0px;
     padding-left: 20px;
 `
@@ -24,9 +23,7 @@ export const HeadContainer = styled.View`
 export const SubTitle = styled.Text`
     font-size: 20px;
     color: #4C9FC1;
-    text-align: center;
     font-family:'Nunito-MediumItalic';
-    text-align: start;
     padding-left: 50px;
 `
 

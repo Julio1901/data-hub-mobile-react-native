@@ -37,7 +37,7 @@ export const SignUpContainer = styled.View`
 `
 
 export const SignUpText = styled.Text`
-    font-size: 20;
+    font-size: 20px;
     font-family: 'BarlowCondensed-Regular';
 `
 export const SignUpButtonText = styled.Text`

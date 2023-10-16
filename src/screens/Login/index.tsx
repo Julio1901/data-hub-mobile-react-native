@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { BodyContainer, Title, MainContainer, ButtonContainer, SignUpText, SignUpButtonText, SignUpContainer, LogoContainer} from "./styles";
 import InputWithFeedbackValidation from "../../components/InputWithFeedbackValidation/inputWithFeedbackValidation";
-import { DefaultButton } from "../../components/DefaultButton";
+import { DefaultButton } from "../../components/DefaultButton/defaultButton";
 import Gif from 'react-native-gif'
 import { DocumentValidator } from "../../utils/documentValidator";
 import { useNavigation } from "@react-navigation/native";

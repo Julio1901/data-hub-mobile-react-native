@@ -15,7 +15,7 @@ const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMess
   return (
     <View>
       <InputContainer>
-        <SignInInput placeholder={placeholder} placeholderTextColor="#949494" onBlur={onBlur} onFocus={onFocus} onChangeText={(text) => onTextChange(text)}/>
+        <SignInInput placeholder={placeholder} placeholderTextColor="#949494" onBlur={onBlur} onFocus={onFocus} onChangeText={(text) => onTextChange(text)} testID='sign-in-input-id'/>
         { showFeedbackMessage? (
            <ValidationInputMessage>{feedbackMessage}</ValidationInputMessage>
         ): null        

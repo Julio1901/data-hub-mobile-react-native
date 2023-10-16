@@ -2,8 +2,8 @@ import styled from "styled-components/native";
 
 
 export const ExpenseContainerPaid = styled.View`
-    width: 200;
-    height: 100;
+    width: 200px;
+    height: 100px;
     border-radius: 30px;
     background-color: rgba(76, 159, 193, 0.2);
     margin-bottom: 15px;
@@ -14,8 +14,8 @@ export const ExpenseContainerPaid = styled.View`
 `
 
 export const ExpenseContainerNotPaid = styled.View`
-    width: 200;
-    height: 100;
+    width: 200px;
+    height: 100px;
     border-radius: 30px;
     background-color: rgba(76, 159, 193, 0.2);
     margin-bottom: 15px;
