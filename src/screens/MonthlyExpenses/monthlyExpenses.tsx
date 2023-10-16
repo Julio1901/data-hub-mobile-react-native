@@ -26,14 +26,16 @@ const MonthlyExpensesScreen = () => {
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
             </ExpenseTitleContainer>
-          <FlatList style={{ paddingTop: 5 }}
+          <FlatList style={{ paddingTop: 5}}
             data={expensesMock}
-            renderItem={({item}) => (
+            numColumns={2}
+            renderItem={({item, index}) => (
               <ExpenseListItem
                 name={item.name}
                 value={item.value}
                 type={item.type}
                 isPaid={item.isPaid}
+                hasMarginLeft={ index % 2 === 1 ? true : false}
               />
             )}
             showsVerticalScrollIndicator={false}
