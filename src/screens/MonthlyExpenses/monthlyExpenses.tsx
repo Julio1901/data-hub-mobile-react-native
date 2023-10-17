@@ -5,6 +5,7 @@ import {Expense} from '../../DTO/ExpenseDTO';
 import {ExpenseListItem} from './components/expenseListItem';
 import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
 import { DropDownList } from '../../components/DropDownList/dropDownList';
+import { IDropDownSelectableItemProps } from '../../components/DropDownList/DropDownSelectableItem/dropDownSelectableItem';
 
 const MonthlyExpensesScreen = () => {
   const expensesMock = [
@@ -20,7 +21,7 @@ const MonthlyExpensesScreen = () => {
     new Expense('Gym Pass', 3000, 'fixed', false),
   ];
 
-
+const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: false} , {title:'Variable', isSelected: true}]
 
   return (
     <SafeAreaView>
@@ -31,7 +32,7 @@ const MonthlyExpensesScreen = () => {
           <DropDownList  
           title='Expense Type'
           isSingleSelection={true}
-          listItems={['Fixed', 'Variable']}
+          listItems={MonthlyTypes}
           />
         </ExpenseTypeDropDownListContainer>
         <ExpenseListContainer>
