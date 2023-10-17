@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
-
-
+import {Picker} from '@react-native-picker/picker';
 
 export const MainContainer = styled.View`
     width: 100%;
@@ -8,11 +7,35 @@ export const MainContainer = styled.View`
     align-items: center;
 `
 
+export const TotalExpensesTitle = styled.Text`
+    font-size: 16px;
+    font-family: 'Manrope-Medium';
+    color: #626467;
+    align-self: flex-start;
+    margin-top: 12px;
+    margin-left: 24px;
+`
+
+export const TotalExpensesText = styled.Text`
+    font-size: 14px;
+    font-family: 'Manrope-Medium';
+    color: #A1A7B0;
+    align-self: flex-start;
+    margin-top: 5px;
+    margin-left: 24px;
+`
+
+export const ExpenseTypePicker = styled(Picker)` 
+    margin-top: -50px;
+    width: 180px;
+    
+    background-color: '#A1A7B0'
+
+`
 
 export const ExpenseListContainer = styled.View`
     width: 90%;
     height: 70%;
-    
     background-color: white;
     border-radius: 30px;
     align-items: center;
@@ -35,4 +58,12 @@ export const ExpenseTitleContainer = styled.View`
     background-color: #1880A9;
     border-top-left-radius: 30px; 
     border-top-right-radius: 30px; 
+`
+
+export const ExpenseTypeDropDownListContainer = styled.View`
+    align-items: flex-start;
+    align-self: flex-start;
+    align-self: flex-start;
+    margin-left: 24px;
+    margin-top: 10px;
 `

@@ -1,9 +1,10 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Expense} from '../../DTO/ExpenseDTO';
 import {ExpenseListItem} from './components/expenseListItem';
-import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer, MainContainer} from './styles';
+import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
+import { DropDownList } from '../../components/DropDownList/dropDownList';
 
 const MonthlyExpensesScreen = () => {
   const expensesMock = [
@@ -19,9 +20,20 @@ const MonthlyExpensesScreen = () => {
     new Expense('Gym Pass', 3000, 'fixed', false),
   ];
 
+
+
   return (
     <SafeAreaView>
       <MainContainer>
+        <TotalExpensesTitle>Total Expenses</TotalExpensesTitle>
+        <TotalExpensesText>R$ 5.000,00</TotalExpensesText>
+        <ExpenseTypeDropDownListContainer>
+          <DropDownList  
+          title='Expense Type'
+          isSingleSelection={true}
+          listItems={['Fixed', 'Variable']}
+          />
+        </ExpenseTypeDropDownListContainer>
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
