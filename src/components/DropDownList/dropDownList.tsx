@@ -29,14 +29,32 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
         setListItemsToRender(updatedItems);
       };
 
-    const selectJustPressedItem = () => {
+    const selectJustPressedItem = (itemIndex: number) => {
+        
+        console.log('external index', itemIndex )
 
+        const updateItems = listItemsToRender.map((item, index) => {
+          
+            if (itemIndex === index){
+                return {
+                    ...item,
+                    isSelected: !item.isSelected,
+                  };
+            } else{
+              
+                return {
+                    ...item,
+                    isSelected: false,
+                  };
+            }
+          });
+
+          setListItemsToRender(updateItems);
     }
 
 
     const onItemPress = () => {
         resetAllItemsSelection()
-        console.log('onItemPress called')
     }
     
     return(
@@ -48,7 +66,14 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
             {isListVisible && (
               <OptionsContainer>
                      {listItemsToRender.map((item, index) => (
-                        <DropDownSelectableItem key={index} title={item.title} isSelected={item.isSelected} onPress={onItemPress} />
+                        <DropDownSelectableItem
+                         key={index} 
+                         title={item.title}
+                         isSelected={item.isSelected}
+                         onPress={() => {
+                            onItemPress();
+                            selectJustPressedItem(index);
+                          }} />
                     ))}
               </OptionsContainer>
             )}

@@ -21,7 +21,7 @@ const MonthlyExpensesScreen = () => {
     new Expense('Gym Pass', 3000, 'fixed', false),
   ];
 
-const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: true, onPress : () => {}} , {title:'Variable', isSelected: true, onPress : () => {}}]
+const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: false, onPress : () => {}} , {title:'Variable', isSelected: false, onPress : () => {}}]
 
   return (
     <SafeAreaView>
