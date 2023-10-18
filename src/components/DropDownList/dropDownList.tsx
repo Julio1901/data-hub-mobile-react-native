@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ArrowIcon, DropDownListButton, DropDownListContainer, ExpenseTypeSelect, OptionsContainer} from "./styles";
 import { DropDownSelectableItem, IDropDownSelectableItemProps } from "./DropDownSelectableItem/dropDownSelectableItem";
-
 interface Props {
     title: string
     isSingleSelection: boolean
@@ -11,6 +10,8 @@ interface Props {
 export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listItems }) => {
     
     const [isListVisible, setIsListVisible] = useState(false)
+    const [listItemsToRender, setListItemsToRender] = useState(listItems)
+
 
     const getArrowImage = () => {
         return isListVisible
@@ -18,6 +19,26 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
         : require('../../assets/images/icons/arrow_bottom.png');
     };
 
+    const resetAllItemsSelection = () => {
+        const updatedItems = listItemsToRender.map((item) => {
+          return {
+            ...item,
+            isSelected: false,
+          };
+        });
+        setListItemsToRender(updatedItems);
+      };
+
+    const selectJustPressedItem = () => {
+
+    }
+
+
+    const onItemPress = () => {
+        resetAllItemsSelection()
+        console.log('onItemPress called')
+    }
+    
     return(
         <DropDownListContainer>
           <DropDownListButton onPress={ () => {  setIsListVisible(!isListVisible) }}>
@@ -26,8 +47,8 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
             </DropDownListButton>         
             {isListVisible && (
               <OptionsContainer>
-                     {listItems.map(item => (
-                        <DropDownSelectableItem title={item.title} isSelected={item.isSelected}/>
+                     {listItemsToRender.map((item, index) => (
+                        <DropDownSelectableItem key={index} title={item.title} isSelected={item.isSelected} onPress={onItemPress} />
                     ))}
               </OptionsContainer>
             )}
