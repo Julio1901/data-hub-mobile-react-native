@@ -29,29 +29,13 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
         setListItemsToRender(updatedItems);
       };
 
-    const selectJustPressedItem = (itemIndex: number) => {
-        
-        console.log('external index', itemIndex )
-
-        const updateItems = listItemsToRender.map((item, index) => {
-          
-            if (itemIndex === index){
-                return {
-                    ...item,
-                    isSelected: !item.isSelected,
-                  };
-            } else{
-              
-                return {
-                    ...item,
-                    isSelected: false,
-                  };
-            }
-          });
-
-          setListItemsToRender(updateItems);
-    }
-
+      const selectJustPressedItem = (itemIndex: number) => {
+        const updatedItems = listItemsToRender.map((item, index) => ({
+          ...item,
+          isSelected: index === itemIndex ? !item.isSelected : false,
+        }));
+        setListItemsToRender(updatedItems);
+      };
 
     const onItemPress = () => {
         resetAllItemsSelection()
