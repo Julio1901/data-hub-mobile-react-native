@@ -8,11 +8,10 @@ interface Props {
 }
 
 export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listItems }) => {
-    
+
     const [isListVisible, setIsListVisible] = useState(false)
     const [listItemsToRender, setListItemsToRender] = useState(listItems)
-
-
+    
     const getArrowImage = () => {
         return isListVisible
         ? require('../../assets/images/icons/arrow_top.png')

@@ -67,3 +67,11 @@ export const ExpenseTypeDropDownListContainer = styled.View`
     margin-left: 24px;
     margin-top: 10px;
 `
+export const SearchContainer = styled.View`
+    width: 78%;
+    align-self: flex-start;
+    margin-left: 24px;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+`

@@ -3,9 +3,11 @@ import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Expense} from '../../DTO/ExpenseDTO';
 import {ExpenseListItem} from './components/expenseListItem';
-import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
+import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, SearchContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
 import { DropDownList } from '../../components/DropDownList/dropDownList';
 import { IDropDownSelectableItemProps } from '../../components/DropDownList/DropDownSelectableItem/dropDownSelectableItem';
+import { DefaultSearch } from '../../components/Search/DefaultSearch';
+import { RangeFilter } from '../../components/RangeFilter/RangeFilter';
 
 const MonthlyExpensesScreen = () => {
   const expensesMock = [
@@ -35,6 +37,11 @@ const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelecte
           listItems={MonthlyTypes}
           />
         </ExpenseTypeDropDownListContainer>
+        <SearchContainer>
+          <DefaultSearch/>
+          <RangeFilter/>
+        </SearchContainer>
+      
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
