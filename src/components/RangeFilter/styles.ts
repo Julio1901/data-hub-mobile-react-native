@@ -12,5 +12,4 @@ export const RangeFilterButton = styled(TouchableOpacity)`
 
 export const RangeFilterIcon = styled.Image<{ source: ImageSourcePropType }>`
    align-self: center;
-  
 `

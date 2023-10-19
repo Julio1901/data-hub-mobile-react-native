@@ -35,7 +35,7 @@ export const ExpenseTypePicker = styled(Picker)`
 
 export const ExpenseListContainer = styled.View`
     width: 90%;
-    height: 70%;
+    height: 60%;
     background-color: white;
     border-radius: 30px;
     align-items: center;
@@ -74,4 +74,8 @@ export const SearchContainer = styled.View`
     margin-top: 20px;
     flex-direction: row;
     justify-content: space-between;
+`
+
+export const RangeSliderContainer = styled.View`
+    margin-top: 15px;
 `
