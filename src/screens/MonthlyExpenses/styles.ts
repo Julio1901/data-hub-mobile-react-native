@@ -35,12 +35,12 @@ export const ExpenseTypePicker = styled(Picker)`
 
 export const ExpenseListContainer = styled.View`
     width: 90%;
-    height: 60%;
+    flex: 1;
     background-color: white;
     border-radius: 30px;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    margin-top: 20%;
+    margin-bottom: 10%;
 `
 
 export const ExpenseTitle = styled.Text`
