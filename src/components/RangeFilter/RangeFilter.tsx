@@ -1,9 +1,13 @@
 import React from "react";
 import { RangeFilterButton, RangeFilterIcon } from "./styles";
 
-export const RangeFilter: React.FC = () => {
+interface IDefaultRangeFilterButtonProps{
+    onPress?: () => void
+}
+
+export const DefaultRangeFilterButton: React.FC<IDefaultRangeFilterButtonProps> = ({onPress}) => {
     return(
-            <RangeFilterButton>
+            <RangeFilterButton onPress={onPress}>
                 <RangeFilterIcon source={require('../../assets/images/icons/range-filter-icon.png')} />    
             </RangeFilterButton>
     )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Expense} from '../../DTO/ExpenseDTO';
@@ -7,11 +7,20 @@ import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeD
 import { DropDownList } from '../../components/DropDownList/dropDownList';
 import { IDropDownSelectableItemProps } from '../../components/DropDownList/DropDownSelectableItem/dropDownSelectableItem';
 import { DefaultSearch } from '../../components/Search/DefaultSearch';
-import { RangeFilter } from '../../components/RangeFilter/RangeFilter';
+import { DefaultRangeFilterButton } from '../../components/RangeFilter/RangeFilter';
 import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
 
 
 const MonthlyExpensesScreen = () => {
+
+  const [rangeFilterIsVisible, setRangeFilterIsVisible] = useState(false)
+
+
+  const handleWithRangeFilterButtonPress = () => {
+    setRangeFilterIsVisible(!rangeFilterIsVisible)
+  }
+
+
   const expensesMock = [
     new Expense('Conta de luz', 1000, 'fixed', false),
     new Expense('Gás', 4000, 'fixed', false),
@@ -27,6 +36,8 @@ const MonthlyExpensesScreen = () => {
 
 const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: false, onPress : () => {}} , {title:'Variable', isSelected: false, onPress : () => {}}]
 
+
+
   return (
     <SafeAreaView>
       <MainContainer>
@@ -41,12 +52,13 @@ const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelecte
         </ExpenseTypeDropDownListContainer>
         <SearchContainer>
           <DefaultSearch/>
-          <RangeFilter/>
+          <DefaultRangeFilterButton onPress={handleWithRangeFilterButtonPress} />
         </SearchContainer>
-        <RangeSliderContainer>
-          <RangeSlider/>
-        </RangeSliderContainer>
-      
+        {rangeFilterIsVisible &&
+                <RangeSliderContainer>
+                <RangeSlider/>
+              </RangeSliderContainer>        
+      }
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>

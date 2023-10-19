@@ -3,13 +3,8 @@ import { DefaultSlider, SlideValue, SlideValueContainer, SlideValueType, SliderC
 
 
 export const RangeSlider: React.FC = () => {
-
+    
     const [value, setValue] = useState(0)
-
-    const test = (value: number) => {
-        console.log(value)
-
-    }
 
     const handleWithValue = (value: number) => {
         let result: number = Math.floor(Math.round(value) / 3)
@@ -20,7 +15,6 @@ export const RangeSlider: React.FC = () => {
     }
 
     return (
-
         <SliderContainer>
             <SliderTitle>Maximum Expense Price</SliderTitle>
             <SlideValueContainer>
