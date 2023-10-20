@@ -43,6 +43,11 @@ export const ExpenseListContainer = styled.View`
     margin-bottom: 10%;
 `
 
+export const ExpenseListLoadingContainer = styled.View`
+    flex: 1;
+    justify-content: center;
+`
+
 export const ExpenseTitle = styled.Text`
     font-size: 30px;
     align-self: flex-start;

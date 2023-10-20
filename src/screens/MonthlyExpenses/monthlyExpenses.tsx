@@ -3,7 +3,7 @@ import {ActivityIndicator, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Expense} from '../../DTO/ExpenseDTO';
 import {ExpenseListItem} from './components/expenseListItem';
-import {ExpenseListContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, RangeSliderContainer, SearchContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
+import {ExpenseListContainer, ExpenseListLoadingContainer, ExpenseTitle, ExpenseTitleContainer,  ExpenseTypeDropDownListContainer,  MainContainer, RangeSliderContainer, SearchContainer, TotalExpensesText, TotalExpensesTitle} from './styles';
 import { DropDownList } from '../../components/DropDownList/dropDownList';
 import { IDropDownSelectableItemProps } from '../../components/DropDownList/DropDownSelectableItem/dropDownSelectableItem';
 import { DefaultSearch } from '../../components/Search/DefaultSearch';
@@ -14,10 +14,11 @@ import * as Progress from 'react-native-progress';
 const MonthlyExpensesScreen = () => {
 
   const [rangeFilterIsVisible, setRangeFilterIsVisible] = useState(false)
-
+  const [expenseLoadingIsVisible, setExpenseLoadingIsVisible ] = useState(false)
 
   const handleWithRangeFilterButtonPress = () => {
     setRangeFilterIsVisible(!rangeFilterIsVisible)
+    setExpenseLoadingIsVisible(!expenseLoadingIsVisible)
   }
 
 
@@ -58,33 +59,36 @@ const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelecte
                 <RangeSliderContainer>
                 <RangeSlider/>
               </RangeSliderContainer>        
-      }
-
-
-      {/* <ActivityIndicator size={'small'} color="#1880A9"/> */}
-      <Progress.CircleSnail color={['red', 'green', 'blue']} />
-
+      }  
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
             </ExpenseTitleContainer>
 
-       
-
+        {expenseLoadingIsVisible ? (
+               <ExpenseListLoadingContainer>
+               <Progress.CircleSnail color={['#1880A9', '#a3e5ff']} size={50} direction='clockwise'/>
+            </ExpenseListLoadingContainer>
+        ) : (
           <FlatList style={{ paddingTop: 5}}
-            data={expensesMock}
-            numColumns={2}
-            renderItem={({item, index}) => (
-              <ExpenseListItem
-                name={item.name}
-                value={item.value}
-                type={item.type}
-                isPaid={item.isPaid}
-                hasMarginLeft={ index % 2 === 1 ? true : false}
-              />
-            )}
-            showsVerticalScrollIndicator={false}
-          />
+          data={expensesMock}
+          numColumns={2}
+          renderItem={({item, index}) => (
+            <ExpenseListItem
+              name={item.name}
+              value={item.value}
+              type={item.type}
+              isPaid={item.isPaid}
+              hasMarginLeft={ index % 2 === 1 ? true : false}
+            />
+          )}
+          showsVerticalScrollIndicator={false}
+        />
+        )
+
+        }
+ 
+      
         </ExpenseListContainer>
       </MainContainer>
     </SafeAreaView>
