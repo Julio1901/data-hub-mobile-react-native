@@ -18,7 +18,7 @@ const MonthlyExpensesScreen = () => {
 
   const handleWithRangeFilterButtonPress = () => {
     setRangeFilterIsVisible(!rangeFilterIsVisible)
-    setExpenseLoadingIsVisible(!expenseLoadingIsVisible)
+    // setExpenseLoadingIsVisible(!expenseLoadingIsVisible)
   }
 
 
@@ -37,7 +37,26 @@ const MonthlyExpensesScreen = () => {
 
 const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: false, onPress : () => {}} , {title:'Variable', isSelected: false, onPress : () => {}}]
 
+let timeoutId: NodeJS.Timeout | null = null;
 
+const handleWithRangeSliderFilter = (value: number) => {
+  console.log('External called');
+
+  // Cancela o timeout anterior (se houver).
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+    timeoutId = null;
+  }
+
+  // Define um novo timeout.
+  timeoutId = setTimeout(() => {
+    console.log("Este é um pequeno atraso de 2 segundos.");
+    console.log(value);
+
+    // Limpa o identificador de timeout após a execução.
+    timeoutId = null;
+  }, 2000);
+};
 
   return (
     <SafeAreaView>
@@ -57,7 +76,7 @@ const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelecte
         </SearchContainer>
         {rangeFilterIsVisible &&
                 <RangeSliderContainer>
-                <RangeSlider/>
+                <RangeSlider onValueChange={ value => handleWithRangeSliderFilter(value)}/>
               </RangeSliderContainer>        
       }  
         <ExpenseListContainer>

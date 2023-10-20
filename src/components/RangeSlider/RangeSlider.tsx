@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { DefaultSlider, SlideValue, SlideValueContainer, SlideValueType, SliderContainer, SliderTitle } from "./styles";
 
 
-export const RangeSlider: React.FC = () => {
+interface RangeSliderProps{
+    onValueChange : (value: number) => void
+}
+
+export const RangeSlider: React.FC<RangeSliderProps> = ({onValueChange}) => {
     
     const [value, setValue] = useState(0)
 
@@ -12,6 +16,7 @@ export const RangeSlider: React.FC = () => {
             result = Math.ceil(result / 10) * 10;
           }
         setValue(result)
+        onValueChange(result)
     }
 
     return (
