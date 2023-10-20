@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {FlatList} from 'react-native';
+import {ActivityIndicator, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Expense} from '../../DTO/ExpenseDTO';
 import {ExpenseListItem} from './components/expenseListItem';
@@ -9,7 +9,7 @@ import { IDropDownSelectableItemProps } from '../../components/DropDownList/Drop
 import { DefaultSearch } from '../../components/Search/DefaultSearch';
 import { DefaultRangeFilterButton } from '../../components/RangeFilter/RangeFilter';
 import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
-
+import * as Progress from 'react-native-progress';
 
 const MonthlyExpensesScreen = () => {
 
@@ -59,10 +59,18 @@ const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelecte
                 <RangeSlider/>
               </RangeSliderContainer>        
       }
+
+
+      {/* <ActivityIndicator size={'small'} color="#1880A9"/> */}
+      <Progress.CircleSnail color={['red', 'green', 'blue']} />
+
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
             </ExpenseTitleContainer>
+
+       
+
           <FlatList style={{ paddingTop: 5}}
             data={expensesMock}
             numColumns={2}
