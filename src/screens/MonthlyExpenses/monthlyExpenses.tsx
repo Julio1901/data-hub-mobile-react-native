@@ -49,27 +49,16 @@ const handleWithRangeSliderFilter = (value: number) => {
   }
 
   timeoutIdRef.current = setTimeout(() => {
-    console.log("Este é um pequeno atraso de 2 segundos.");
-    
+    console.log("This is a small 2-second delay.");
     monetaryFilter.current = value
     setUpFilters()
-    
-    
-    // const expenseListFiltered = expenseList.current.filter( item => item.value < value)
-    // setExpenseLoadingIsVisible(false)
-    // setExpenseListToRender(expenseListFiltered)
-    
     timeoutIdRef.current = null;
-
   }, 2000);
 };
 
 
 const handleWithExpenseTypeSelected = (itemsSelected: IDropDownSelectableItemProps[]) => {
-  console.log(itemsSelected)
-
-  let itemSelectedName: string
-
+  let itemSelectedName: string |  null = null
   itemsSelected.forEach( (item) => {
     if (item.isSelected) itemSelectedName = item.title.toLowerCase()
    })
@@ -79,10 +68,8 @@ const handleWithExpenseTypeSelected = (itemsSelected: IDropDownSelectableItemPro
    } else {
     expenseTypeFilter.current = null
    }
-
    setUpFilters()
 }
-
 
 const handleWithNameFilterTextChange = (text: string) => {
   expenseTitleFilter.current = text
@@ -90,9 +77,8 @@ const handleWithNameFilterTextChange = (text: string) => {
 }
 
 const setUpFilters = () => {
-
   let updatedList = expenseList.current
-
+  
   if(monetaryFilter.current > 0){
     const expenseListFiltered = updatedList.filter( item => item.value <= monetaryFilter.current)
     updatedList = expenseListFiltered
