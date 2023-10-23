@@ -5,9 +5,10 @@ interface Props {
     title: string
     isSingleSelection: boolean
     listItems: IDropDownSelectableItemProps[]
+    onItemIsSelected? (itemsSelected: IDropDownSelectableItemProps[]) : void
 }
 
-export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listItems }) => {
+export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listItems, onItemIsSelected }) => {
 
     const [isListVisible, setIsListVisible] = useState(false)
     const [listItemsToRender, setListItemsToRender] = useState(listItems)
@@ -34,6 +35,7 @@ export const DropDownList : React.FC<Props> = ({title, isSingleSelection, listIt
           isSelected: index === itemIndex ? !item.isSelected : false,
         }));
         setListItemsToRender(updatedItems);
+        onItemIsSelected && onItemIsSelected(updatedItems)
       };
 
     const onItemPress = () => {
