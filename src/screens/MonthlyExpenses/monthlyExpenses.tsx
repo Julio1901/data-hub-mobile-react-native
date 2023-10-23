@@ -10,7 +10,6 @@ import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
 import * as Progress from 'react-native-progress';
 import { expensesMockTest } from '../../common/Mocks';
 import { FlatList } from 'react-native';
-import { Expense } from '../../DTO/ExpenseDTO';
 
 const MonthlyExpensesScreen = () => {
 
@@ -21,6 +20,7 @@ const MonthlyExpensesScreen = () => {
   const [expenseListToRender, setExpenseListToRender] = useState(expenseList.current)
   const monetaryFilter = useRef(0)
   const expenseTypeFilter = useRef<'fixed' | 'variable' | null>(null)
+  const expenseTitleFilter = useRef<string | null>(null)
 
   useEffect(() => {
     return () => {
@@ -84,6 +84,11 @@ const handleWithExpenseTypeSelected = (itemsSelected: IDropDownSelectableItemPro
 }
 
 
+const handleWithNameFilterTextChange = (text: string) => {
+  expenseTitleFilter.current = text
+  setUpFilters()
+}
+
 const setUpFilters = () => {
 
   let updatedList = expenseList.current
@@ -96,21 +101,24 @@ const setUpFilters = () => {
     updatedList = expenseList.current
   }
 
-
   if(expenseTypeFilter.current){
     const expenseListFiltered = updatedList.filter( item => item.type === expenseTypeFilter.current) 
     updatedList = expenseListFiltered
 
   } else {
-   
+   //TODO Verificar se precisa de tratativa
   }
 
+
+  if(expenseTitleFilter.current){
+      const expenseListFiltered = updatedList.filter( item => item.name.includes(expenseTitleFilter.current!))
+      updatedList = expenseListFiltered
+  } else {
+    //TODO Verificar se precisa de tratativa
+  }
     updatedList && setExpenseListToRender(updatedList)
-
     setExpenseLoadingIsVisible(false)
-
 }
-
 
   return (
     <SafeAreaView>
@@ -128,28 +136,14 @@ const setUpFilters = () => {
           />
         </ExpenseTypeDropDownListContainer>
         <SearchContainer>
-          <DefaultSearch/>
-          <DefaultRangeFilterButton onPress={handleWithRangeFilterButtonPress} />
+          <DefaultSearch onTextChange={ text => handleWithNameFilterTextChange(text)}/>
+          <DefaultRangeFilterButton onPress={handleWithRangeFilterButtonPress}/>
         </SearchContainer>
-
-
-
-
-
-
         {rangeFilterIsVisible &&
                 <RangeSliderContainer>
                 <RangeSlider onValueChange={ value => handleWithRangeSliderFilter(value)}/>
               </RangeSliderContainer>        
       } 
-
-
-
-
-
-
-
-
         <ExpenseListContainer>
             <ExpenseTitleContainer>
                 <ExpenseTitle>Your Expenses</ExpenseTitle>
@@ -177,8 +171,7 @@ const setUpFilters = () => {
         )
 
         }
- 
-      
+       
         </ExpenseListContainer>
       </MainContainer>
     </SafeAreaView>
