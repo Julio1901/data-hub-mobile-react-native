@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native"
 import { SafeAreaView, Text, TouchableOpacity } from "react-native"
 import { HomeStackNavigation } from "../../navigation/homeStack"
+import { ContentContainer, MainContainer } from "./styles"
+import { BottomMenu } from "../../components/BottomMenu/BottomMenu"
 
 
 const Home = () => { 
@@ -12,11 +14,17 @@ const Home = () => {
     }
 
     return(
-        <SafeAreaView>
-           <TouchableOpacity style={{marginTop: 20, marginLeft:30}} onPress={onGoToExpenseListPressed}>
-                <Text>Go to Expense List</Text>
-           </TouchableOpacity>
-        </SafeAreaView>
+        <MainContainer>
+            <ContentContainer>
+                <TouchableOpacity onPress={onGoToExpenseListPressed}>
+                        <Text>Go to Expense List</Text>
+                </TouchableOpacity>
+            </ContentContainer>
+               
+
+            <BottomMenu />
+              
+        </MainContainer>
     
     )
 
