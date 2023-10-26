@@ -1,3 +1,4 @@
+import { MonetaryUtils } from "../../../utils/monetaryUtils";
 import { CenterContainer, ExpenseContainerNotPaid, ExpenseContainerPaid, ExpenseName, ExpenseType, HeaderContainer, MoneyContainer, MoneySymbol, MoneyValue } from "./styles";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
@@ -11,16 +12,20 @@ type ItemProps = {
 };
 
 export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid, hasMarginLeft, onCheckChange }) => {
-
     const margin = hasMarginLeft === true ? 15 : 0
-
     const formatMonetaryValue = (value: number): string => {
-        const numberToFormat = value.toString()
-        if (numberToFormat.length <= 7) return numberToFormat
+    const amountString = value.toString();
+    const [integerPart, decimalPart] = amountString.split('.');
+    const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const formattedDecimalPart = decimalPart ? ',' + decimalPart.slice(0, 2) : ',00';
+    let result = `${formattedIntegerPart}${formattedDecimalPart}`;
 
-        const formattedValue =  `${numberToFormat.substring(0, 7)}...`
-        return formattedValue
+    if (result.length >= 14 ) {
+            result = `${result.substring(0,7)} m`
     }
+
+    return result
+}
 
     return isPaid  == true ? (
         <ExpenseContainerPaid style={ { marginLeft: margin}}>

@@ -25,7 +25,7 @@ export class MockUtils{
     new Expense('Restaurante', 800, 'variable', true),
     new Expense('Café Expresso', 150, 'fixed', false),
     new Expense('Seguro de Vida', 2000, 'fixed', true),
-    new Expense('Assinatura de Streaming', 30000000000000, 'fixed', true),
+    new Expense('Assinatura de Streaming', 300004515, 'fixed', true),
     new Expense('Roupas', 900, 'variable', true),
     new Expense('Manutenção do Carro', 1200, 'fixed', true),
     new Expense('Educação', 750, 'variable', true),

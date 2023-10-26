@@ -38,5 +38,5 @@ export class DocumentValidator{
       static validateEmailOrCpf(login: string): boolean  {
         return ((this.validateCpf(login) || this.validateEmail(login)))
       }
-    
+          
 }
