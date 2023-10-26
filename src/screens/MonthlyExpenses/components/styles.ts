@@ -1,14 +1,12 @@
 import styled from "styled-components/native";
 
-
 export const ExpenseContainerPaid = styled.View`
     width: 150px;
     height: 100px;
     border-radius: 30px;
-    background-color: rgba(76, 159, 193, 0.2);
+    background-color:  white;
     margin-bottom: 15px;
     justify-content: center;
-    padding: 5px;
     border: 2px;
     border-color: #57FFAB;
 `
@@ -17,21 +15,29 @@ export const ExpenseContainerNotPaid = styled.View`
     width: 150px;
     height: 100px;
     border-radius: 30px;
-    background-color: rgba(76, 159, 193, 0.2);
+    background-color: white;
     margin-bottom: 15px;
     justify-content: center;
-    padding: 5px;
     border: 2px;
     border-color: #FC5F54;
+ 
+`
+
+export const HeaderContainer = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 10px;
 `
 
 export const ExpenseType = styled.Text`
     font-size: 15px;
     color: #008B8B;
-    margin-left: 5px;
     font-family: 'FiraSans-Medium';
-
 `
+
 export const ExpenseName = styled.Text`
     font-size: 15px;
     color: #FF8757;
@@ -40,7 +46,9 @@ export const ExpenseName = styled.Text`
 
 export const CenterContainer = styled.View`
     align-items: center;
-    padding-top: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 15px;
 `
 
 export const MoneySymbol = styled.Text`
@@ -49,7 +57,6 @@ export const MoneySymbol = styled.Text`
    font-family: 'PlayfairDisplay-Medium';
 `
 
-
 export const MoneyValue = styled.Text`
     font-size: 20px;
     margin-left: 5px;
@@ -57,9 +64,8 @@ export const MoneyValue = styled.Text`
     font-family: 'PlayfairDisplay-Bold'
 `
 
-
 export const MoneyContainer = styled.View`
+    max-width: 90%;
     flex-direction: row;
     align-items: baseline;
-    padding-top: 3px;
 `
