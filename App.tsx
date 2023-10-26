@@ -1,10 +1,10 @@
 import { DataBaseService } from "./src/database/db-service";
-import SignInStackNavigationComponent from "./src/navigation/signInStack";
+import HomeStackNavigationComponent from "./src/navigation/homeStack";
 
 function App(): JSX.Element {
    const dbService = new DataBaseService()
   return (
-    <SignInStackNavigationComponent/>
+    <HomeStackNavigationComponent/>
   )
  }
 
