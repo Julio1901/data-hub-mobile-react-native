@@ -8,10 +8,10 @@ import { DefaultSearch } from '../../components/Search/DefaultSearch';
 import { DefaultRangeFilterButton } from '../../components/RangeFilter/RangeFilter';
 import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
 import * as Progress from 'react-native-progress';
-// import { expensesMockTest } from '../../common/Mocks';
 import { FlatList } from 'react-native';
 import { Expense } from '../../DTO/ExpenseDTO';
 import { MockUtils } from '../../common/Mocks';
+import { MonetaryUtils } from '../../utils/monetaryUtils';
 
 const MonthlyExpensesScreen = () => {
 
@@ -25,7 +25,8 @@ const MonthlyExpensesScreen = () => {
   const monetaryFilter = useRef(0)
   const expenseTypeFilter = useRef<'fixed' | 'variable' | null>(null)
   const expenseTitleFilter = useRef<string | null>(null)
-
+  const [totalExpenses, setTotalExpenses] = useState('')
+  
   useEffect(() => {
     return () => {
       if (timeoutIdRef.current) {
@@ -33,6 +34,16 @@ const MonthlyExpensesScreen = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    let totalExpensesValue = 0
+
+    expenseList.current.forEach( item => 
+      totalExpensesValue+= item.value
+    )
+
+    setTotalExpenses(MonetaryUtils.monetaryFormate(totalExpensesValue))
+  }, [])
 
   const MonthlyTypes: IDropDownSelectableItemProps[] = [ {title:'Fixed', isSelected: false, onPress : () => {}} , {title:'Variable', isSelected: false, onPress : () => {}}]
 
@@ -146,7 +157,7 @@ const onCardCheckChange = (index: number) => {
     <SafeAreaView>
       <MainContainer>
         <TotalExpensesTitle>Total Expenses</TotalExpensesTitle>
-        <TotalExpensesText>R$ 5.000,00</TotalExpensesText>
+        <TotalExpensesText>R$ {totalExpenses}</TotalExpensesText>
         <ExpenseTypeDropDownListContainer>
           <DropDownList  
           title='Expense Type'
