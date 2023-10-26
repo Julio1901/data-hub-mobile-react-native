@@ -1,8 +1,12 @@
 import { Expense } from "../DTO/ExpenseDTO";
 
 
-export const expensesMockTest = [
-    new Expense('Conta de luz', 1000, 'fixed', false),
+
+export class MockUtils{
+
+
+     expensesMockTest = [
+    new Expense('Mock test item', 1000, 'fixed', false),
     new Expense('Gás', 4000, 'fixed', false),
     new Expense('Investimentos', 5000, 'variable', true),
     new Expense('IPVA Carro', 10000, 'variable', true),
@@ -48,3 +52,33 @@ export const expensesMockTest = [
     new Expense('Despesas de Viagem', 1200, 'variable', true),
     new Expense('Cachorro', 400, 'variable', true),
   ];
+
+
+
+  getMocks() : Expense[] {
+    return this.expensesMockTest
+  }
+
+   updateExpense(expense: Expense) : Expense[]{
+    // const itemIndex = this.expensesMockTest.findIndex(item =>  item.name === expense.name)
+    
+    let listUpdated = this.expensesMockTest.map( (item, i) => {
+      if(item.name === expense.name ) {
+        return { ...item, isPaid: !expense.isPaid }
+      } else {
+        return { ...item}
+      }
+    }).filter((item) => item !== undefined) as Expense[]
+
+    this.expensesMockTest = listUpdated
+    console.log('Item atualizado ----------------------------------------')
+    // console.log(this.expensesMockTest )
+    return this.expensesMockTest
+  }
+
+
+}
+
+
+
+  

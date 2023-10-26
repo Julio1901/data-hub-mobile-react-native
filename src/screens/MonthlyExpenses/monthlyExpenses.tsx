@@ -8,16 +8,19 @@ import { DefaultSearch } from '../../components/Search/DefaultSearch';
 import { DefaultRangeFilterButton } from '../../components/RangeFilter/RangeFilter';
 import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
 import * as Progress from 'react-native-progress';
-import { expensesMockTest } from '../../common/Mocks';
+// import { expensesMockTest } from '../../common/Mocks';
 import { FlatList } from 'react-native';
 import { Expense } from '../../DTO/ExpenseDTO';
+import { MockUtils } from '../../common/Mocks';
 
 const MonthlyExpensesScreen = () => {
+
+  const mockUtils = new MockUtils()
 
   const [rangeFilterIsVisible, setRangeFilterIsVisible] = useState(false)
   const [expenseLoadingIsVisible, setExpenseLoadingIsVisible ] = useState(false)
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
-  const expenseList = useRef(expensesMockTest)
+  const expenseList = useRef(mockUtils.getMocks())
   const [expenseListToRender, setExpenseListToRender] = useState(expenseList.current)
   const monetaryFilter = useRef(0)
   const expenseTypeFilter = useRef<'fixed' | 'variable' | null>(null)
@@ -103,6 +106,10 @@ const setUpFilters = () => {
   } else {
     //TODO Verificar se precisa de tratativa
   }
+
+  const itemTestIndex = updatedList.findIndex(item =>  item.name === 'Mock test item')
+  console.log(updatedList[itemTestIndex])
+
     updatedList && setExpenseListToRender(updatedList)
     setExpenseLoadingIsVisible(false)
 }
@@ -110,14 +117,29 @@ const setUpFilters = () => {
 const expenseListRef = useRef(null)
 
 const onCardCheckChange = (index: number) => {  
+    let itemToUpdate : Expense
+    
     let listUpdated = expenseListToRender.map( (item, i) => {
       if(i === index ) {
+        itemToUpdate = item
         return { ...item, isPaid: !item.isPaid }
       } else {
         return { ...item}
       }
     }).filter((item) => item !== undefined) as Expense[]
-    listUpdated && setExpenseListToRender(listUpdated)
+    // listUpdated && setExpenseListToRender(listUpdated)
+    //TODO Simulando alteração no banco de dados. Alterar isso
+    // expenseList.current = listUpdated
+    // setExpenseListToRender(listUpdated)
+    // setUpFilters()
+
+    //TODO simular persistência no banco de dados
+    const result = mockUtils.updateExpense(itemToUpdate)
+    expenseList.current = result
+    setUpFilters()
+    // console.log('******************************************************************')
+    // console.log(result)
+  
 }
 
   return (
