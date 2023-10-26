@@ -7,10 +7,10 @@ type ItemProps = {
     type: 'fixed' | 'variable'
     isPaid: boolean
     hasMarginLeft: boolean
+    onCheckChange: () => void
 };
 
-
-export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid, hasMarginLeft }) => {
+export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid, hasMarginLeft, onCheckChange }) => {
 
     const margin = hasMarginLeft === true ? 15 : 0
 
@@ -26,7 +26,8 @@ export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid,
         <ExpenseContainerPaid style={ { marginLeft: margin}}>
             <HeaderContainer>
                 <ExpenseType>{type}</ExpenseType>
-                <BouncyCheckbox onPress={(isChecked: boolean) => {}} 
+                <BouncyCheckbox onPress={(isChecked: boolean) => {onCheckChange()}} 
+                isChecked={isPaid}
                 size={20}
                 fillColor="#1880A9"
                 iconStyle={{ borderRadius: 5}}
@@ -49,7 +50,8 @@ export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid,
         <ExpenseContainerNotPaid style={ { marginLeft: margin}}>
             <HeaderContainer>
             <ExpenseType>{type}</ExpenseType>
-            <BouncyCheckbox onPress={(isChecked: boolean) => {}} 
+            <BouncyCheckbox onPress={(isChecked: boolean) => {onCheckChange() }} 
+            isChecked={isPaid}
             size={20}
             fillColor="#1880A9"
             iconStyle={{ borderRadius: 5}}
@@ -67,7 +69,6 @@ export const ExpenseListItem: React.FC<ItemProps> = ({name, value, type, isPaid,
         </CenterContainer>
     </ExpenseContainerNotPaid>
     )
-
 
 }
     

@@ -10,6 +10,7 @@ import { RangeSlider } from '../../components/RangeSlider/RangeSlider';
 import * as Progress from 'react-native-progress';
 import { expensesMockTest } from '../../common/Mocks';
 import { FlatList } from 'react-native';
+import { Expense } from '../../DTO/ExpenseDTO';
 
 const MonthlyExpensesScreen = () => {
 
@@ -106,6 +107,19 @@ const setUpFilters = () => {
     setExpenseLoadingIsVisible(false)
 }
 
+const expenseListRef = useRef(null)
+
+const onCardCheckChange = (index: number) => {  
+    let listUpdated = expenseListToRender.map( (item, i) => {
+      if(i === index ) {
+        return { ...item, isPaid: !item.isPaid }
+      } else {
+        return { ...item}
+      }
+    }).filter((item) => item !== undefined) as Expense[]
+    listUpdated && setExpenseListToRender(listUpdated)
+}
+
   return (
     <SafeAreaView>
       <MainContainer>
@@ -140,7 +154,7 @@ const setUpFilters = () => {
                <Progress.CircleSnail color={['#1880A9', '#a3e5ff']} size={50} direction='clockwise'/>
             </ExpenseListLoadingContainer>
         ) : (
-          <FlatList style={{ paddingTop: 5}}
+          <FlatList ref={expenseListRef} style={{ paddingTop: 5}}
           data={expenseListToRender}
           numColumns={2}
           renderItem={({item, index}) => (
@@ -150,6 +164,7 @@ const setUpFilters = () => {
               type={item.type}
               isPaid={item.isPaid}
               hasMarginLeft={ index % 2 === 1 ? true : false}
+              onCheckChange={ () => onCardCheckChange(index)}
             />
           )}
           showsVerticalScrollIndicator={false}
