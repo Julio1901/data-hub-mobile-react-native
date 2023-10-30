@@ -8,6 +8,6 @@ export const MainContainer = styled(SafeAreaView)`
   `
 
 export const ContentContainer = styled.View`
-    background-color: bisque;
+    
     flex: 1;
 `

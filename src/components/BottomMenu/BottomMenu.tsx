@@ -1,26 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { BorderMenuContent, BottomMenuButton, BottomMenuContainer, BottomMenuContentContainer } from "./styles";
-import { TouchableOpacity } from "react-native";
+import { ImageSourcePropType, Text } from "react-native";
 
-export const BottomMenu : React.FC = () => {
+
+interface Props{
+    iconsSource: {
+        image1: any;
+        image2: any;
+        image3: any;
+        image4: any;
+    }
+
+    buttonsBehaviour: (() => void)[];
+}
+
+export const BottomMenu : React.FC <Props>= ({iconsSource, buttonsBehaviour}) => {
+  
+      if (
+        iconsSource.image1 === undefined ||
+        iconsSource.image2 === undefined ||
+        iconsSource.image3 === undefined ||
+        iconsSource.image4 === undefined
+      ) {
+        throw new Error('iconsSource must have exactly 4 elements.');     
+      }
+
+ 
+    if (buttonsBehaviour.length !== 4) {
+        throw new Error('buttonsBehaviour must have exactly 4 elements.');
+    }
 
     return(
+
         <BottomMenuContainer>
             <BottomMenuContentContainer>
-                <BottomMenuButton>
-                    <BorderMenuContent source={require('../../assets/images/icons/home-icon.png')}/>
+                 <BottomMenuButton onPress={buttonsBehaviour[0]}>
+                    <BorderMenuContent   source={iconsSource.image1}/>
                 </BottomMenuButton>
                
-                <BottomMenuButton>
-                    <BorderMenuContent source={require('../../assets/images/icons/expenses-icon.png')}/>
+                <BottomMenuButton onPress={buttonsBehaviour[1]} >
+                    <BorderMenuContent source={iconsSource.image2}/>
                 </BottomMenuButton>
 
-                <BottomMenuButton>
-                    <BorderMenuContent source={require('../../assets/images/icons/investment-icon.png')}/>
+                <BottomMenuButton onPress={buttonsBehaviour[2]}>
+                    <BorderMenuContent   source={iconsSource.image3} />
                 </BottomMenuButton>
 
-                <BottomMenuButton>
-                    <BorderMenuContent source={require('../../assets/images/icons/settings-icon.png')}/>
+                <BottomMenuButton onPress={buttonsBehaviour[3]}>
+                    <BorderMenuContent   source={iconsSource.image4} />
                 </BottomMenuButton>
             </BottomMenuContentContainer>
         </BottomMenuContainer>

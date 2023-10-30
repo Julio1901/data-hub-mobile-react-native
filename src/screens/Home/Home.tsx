@@ -3,7 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity } from "react-native"
 import { HomeStackNavigation } from "../../navigation/homeStack"
 import { ContentContainer, MainContainer } from "./styles"
 import { BottomMenu } from "../../components/BottomMenu/BottomMenu"
-
+import { HomeImages } from "../../assets/images"
 
 const Home = () => { 
 
@@ -12,6 +12,30 @@ const Home = () => {
     const onGoToExpenseListPressed = () => {
         navigator.navigate("MonthlyExpenses")
     }
+
+    const handleWithHomeClick = () => {
+        console.log('Home Clicked')
+    }
+
+    const handleWithExpenseClick = () => {
+        console.log('Expense Clicked')
+        onGoToExpenseListPressed()
+    }
+
+    const handleWithInvestmentsClick = () => {
+        console.log('Home Clicked')
+    }
+
+    const handleWithConfigClick = () => {
+        console.log('Home Clicked')
+    }
+
+    const bottomMenuClickFunctions = [
+        handleWithHomeClick,
+        handleWithExpenseClick,
+        handleWithInvestmentsClick,
+        handleWithConfigClick
+    ]
 
     return(
         <MainContainer>
@@ -22,7 +46,7 @@ const Home = () => {
             </ContentContainer>
                
 
-            <BottomMenu />
+            <BottomMenu iconsSource={HomeImages} buttonsBehaviour={bottomMenuClickFunctions}/>
               
         </MainContainer>
     
