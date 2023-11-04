@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import {SignInInput, InputContainer, ValidationInputMessage} from './styles';
-import {View} from 'react-native';
+import {TextInput, View} from 'react-native';
 
 interface Props{
     placeholder: string
@@ -9,9 +9,10 @@ interface Props{
     onBlur?: () => void  | null
     onFocus?: () => void  | null
     onTextChange?: (inputChanged: string) => void
+
 }
 
-const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMessage, showFeedbackMessage,  onBlur = () => {} , onFocus = () => {},onTextChange = (inputChanged) => {}  }) => {
+const InputWithFeedbackValidation: React.FC<Props> = ({placeholder, feedbackMessage, showFeedbackMessage,  onBlur = () => {} , onFocus = () => {},onTextChange = (inputChanged) => {}}  ) => {
   return (
     <View>
       <InputContainer>
